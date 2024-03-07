@@ -48,15 +48,8 @@ class ShopListAdapter :
         }
         binding.root.setOnClickListener { onClickListener(shopItem) }
         when (binding) {
-            is ItemShopEnabledBinding -> {
-                binding.tvName.text = shopItem.name
-                binding.tvCount.text = shopItem.count.toString()
-            }
-
-            is ItemShopDisabledBinding -> {
-                binding.tvName.text = shopItem.name
-                binding.tvCount.text = shopItem.count.toString()
-            }
+            is ItemShopEnabledBinding -> binding.shopItem = shopItem
+            is ItemShopDisabledBinding -> binding.shopItem = shopItem
         }
     }
 
